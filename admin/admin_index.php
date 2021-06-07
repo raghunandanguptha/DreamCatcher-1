@@ -24,6 +24,9 @@
 	<div id="header">
 		<img src="../img/logo.jpg">
 		<label>Dream Catchers Zone</label>
+		<ul>
+				<li><a href="../index.php">MainPage</a></li>
+		</ul>
 	</div>
 
 		<?php include('../function/admin_login.php');?>
