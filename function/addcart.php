@@ -9,6 +9,6 @@
 	
 		$conn->query ("INSERT INTO cart (prod_id,cust_id)  VALUES ('$prod_id', '$cust_id')  ") or die(mysqli_error());
 								
-			header("location: product1.php");	
+			header("location: product.php");	
 }
 ?>

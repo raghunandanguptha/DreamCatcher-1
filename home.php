@@ -102,11 +102,11 @@
 
 			 <ul>
 				<li><a href="home.php"><i class="icon-home"></i>Home</a></li>
-				<li><a href="product1.php"><i class="icon-th-list"></i>Product</a>
-				<li><a href="aboutus1.php"><i class="icon-bookmark"></i>About Us</a></li>
-				<li><a href="contactus1.php"><i class="icon-inbox"></i>Contact Us</a></li>
-				<li><a href="privacy1.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
-				<li><a href="faqs1.php"><i class="icon-question-sign"></i>FAQs</a></li>
+				<li><a href="product.php"><i class="icon-th-list"></i>Product</a>
+				<li><a href="aboutus.php"><i class="icon-bookmark"></i>About Us</a></li>
+				<li><a href="contactus.php"><i class="icon-inbox"></i>Contact Us</a></li>
+				<li><a href="privacy.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
+				<li><a href="faqs.php"><i class="icon-question-sign"></i>FAQs</a></li>
 			</ul>
 		</div>
 

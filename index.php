@@ -65,8 +65,8 @@
 						<input type="text" name="mi" placeholder="Middle Initial" maxlength="1" required>
 						<input type="text" name="lastname" placeholder="Lastname" required>
 						<input type="text" name="address" placeholder="Address" style="width:430px;"required>
-						<input type="text" name="country" placeholder="Province" required>
-						<input type="text" name="zipcode" placeholder="ZIP Code" required maxlength="4">
+						<input type="text" name="country" placeholder="Country" required>
+						<input type="text" name="zipcode" placeholder="PIN Code" required maxlength="4">
 						<input type="text" name="mobile" placeholder="Mobile Number" maxlength="11">
 						<input type="text" name="telephone" placeholder="Telephone Number" maxlength="8">
 						<input type="email" name="email" placeholder="Email" required>
@@ -149,11 +149,15 @@
 			?>
 		</div>
 
-
-
+	</div>
+	<div id="footer">
+		<div class="foot">
+			<label style="font-size:17px;"> Copyrght &copy; </label>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			</p>
+		</div>
 	</div>
 
-	<br />
 </div>
 </body>
 </html>

@@ -65,8 +65,8 @@
 						<input type="text" name="mi" placeholder="Middle Initial" maxlength="1" required>
 						<input type="text" name="lastname" placeholder="Lastname" required>
 						<input type="text" name="address" placeholder="Address" style="width:430px;"required>
-						<input type="text" name="country" placeholder="Province" required>
-						<input type="text" name="zipcode" placeholder="ZIP Code" required maxlength="4">
+						<input type="text" name="country" placeholder="Country" required>
+						<input type="text" name="zipcode" placeholder="PIN Code" required maxlength="4">
 						<input type="text" name="mobile" placeholder="Mobile Number" maxlength="11">
 						<input type="text" name="telephone" placeholder="Telephone Number" maxlength="8">
 						<input type="email" name="email" placeholder="Email" required>
@@ -93,7 +93,7 @@
 			</ul>
 	</div>
 
-		<img src="img/contactus.jpg" style="width:1150px; height:250px; border:1px solid #000; ">
+		<img src="img/contact.jpg"  style="width:800px; margin-left: 10%; height:250px; border:1px solid #000; ">
 	<br />
 	<br />
 
@@ -117,10 +117,16 @@
 
 			if(isset($POST['send']));
 			{
+				?>
+				<script type="text/javascript">
+				alert("Message sent")
+				</script>
+				<?php  
 				@$email = $_POST['email'];
 				@$message = $_POST['message'];
 
 				$conn->query ("INSERT INTO `contact` (email, message) VALUES ('$email', '$message')") or die (mysqli_error());
+			
 			}
 		?>
 

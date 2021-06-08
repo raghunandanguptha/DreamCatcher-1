@@ -52,7 +52,6 @@
 			<li><a href="admin_home.php">Products</a>
 				<ul>
 					<li><a href="admin_feature.php "style="font-size:15px; margin-left:15px;">Features</a></li>
-					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Basketball</a></li>
 					<li><a href="admin_DC.php" style="font-size:15px; margin-left:15px;">DreamCatchers</a></li>
 					<li><a href="admin_DCK.php"style="font-size:15px; margin-left:15px;">(DC)KeyChains</a></li>
 				</ul>

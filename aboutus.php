@@ -65,8 +65,8 @@
 						<input type="text" name="mi" placeholder="Middle Initial" maxlength="1" required>
 						<input type="text" name="lastname" placeholder="Lastname" required>
 						<input type="text" name="address" placeholder="Address" style="width:430px;"required>
-						<input type="text" name="country" placeholder="Province" required>
-						<input type="text" name="zipcode" placeholder="ZIP Code" required maxlength="4">
+						<input type="text" name="country" placeholder="Country" required>
+						<input type="text" name="zipcode" placeholder="PIN Code" required maxlength="4">
 						<input type="text" name="mobile" placeholder="Mobile Number" maxlength="11">
 						<input type="text" name="telephone" placeholder="Telephone Number" maxlength="8">
 						<input type="email" name="email" placeholder="Email" required>
@@ -93,17 +93,17 @@
 			</ul>
 	</div>
 
-		<img src="img/about1.jpg" style="width:1150px; height:250px; border:1px solid #000; ">
+		<img src="img/aboutpage.jpg" style="width:800px; margin-left: 10%; height:250px; border:1px solid #000; ">
 	<br />
 	<br />
 
-	<legend>About Us</legend>
+	<legend >About Us</legend>
 		<div id="content">
 			<legend><h3>Mission</h3></legend>
-					<h4 style="text-indent:60px;">To provide a high quality footwear that suit the athletes style and to be one of the leading sports footwear apparel in the country.</h4>
+					<h4 style="text-indent:60px;">To provide a highly Attractive Dream Catchers that Enhances the Custemers Dreams and Positivity </h4>
 			<br />
 				<legend><h3>Vision</h3></legend>
-					<h4 style="text-indent:60px;">Dream Catchers Zone, the company that inspire, motivate, and give determination to the sports enthusiast.</h4>
+					<h4 style="text-indent:60px;">Dream Catchers Zone, the company that inspire, motivates our Custemers</h4>
 			<br />
 
 		</div>
@@ -113,18 +113,9 @@
 	<div id="footer">
 		<div class="foot">
 			<label style="font-size:17px;"> Copyrght &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			</p>
 		</div>
-
-			<div id="foot">
-				<h4>Links</h4>
-					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
-					</ul>
-			</div>
 	</div>
 </body>
 </html>

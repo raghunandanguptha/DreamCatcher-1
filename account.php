@@ -81,10 +81,10 @@
 									<td>Address:</td><td><input type="text" name="address" placeholder="Address" style="width:430px;"required value="<?php echo $address;?>"></td>
 								</tr>
 								<tr>
-									<td>Province:</td><td><input type="text" name="country" placeholder="Province" required value="<?php echo $country;?>"></td>
+									<td>Province:</td><td><input type="text" name="country" placeholder="Country" required value="<?php echo $country;?>"></td>
 								</tr>
 								<tr>
-									<td>ZIP Code:</td><td><input type="text" name="zipcode" placeholder="ZIP Code" required value="<?php echo $zipcode;?>" maxlength="4"></td>
+									<td>ZIP Code:</td><td><input type="text" name="zipcode" placeholder="PIN Code" required value="<?php echo $zipcode;?>" maxlength="4"></td>
 								</tr>
 								<tr>
 									<td>Mobile Number:</td><td><input type="text" name="mobile" placeholder="Mobile Number" value="<?php echo $mobile;?>" maxlength="11"></td>

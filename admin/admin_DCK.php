@@ -60,6 +60,9 @@
 
 
 		<a href="#add" role="button" class="btn btn-info" data-toggle="modal" style="position:absolute;margin-left:222px; margin-top:140px; z-index:-1000;"><i class="icon-plus-sign icon-white"></i>Add Product</a>
+
+		<a href="#remove1" role="button" class="btn btn-info" data-toggle="modal" style="position:absolute;margin-left:444px; margin-top:140px; z-index:-1000;"><i class="icon-plus-sign icon-white"></i>Remove Product</a>
+
 		<div id="add" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:400px;">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -99,7 +102,33 @@
 			</div>
 		</div>
 
-		<?php
+
+
+		<div id="remove1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="width:400px;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+				<h3 id="myModalLabel">Remove Product...</h3>
+			</div>
+				<div class="modal-body">
+					<form method="post" enctype="multipart/form-data">
+					<center>
+						<table>
+							<tr>
+								<td><input type="text" name="product_name" placeholder="Product Name" style="width:250px;" required></td>
+							<tr/>
+						</table>
+					</center>
+				</div>
+			<div class="modal-footer">
+				<input class="btn btn-primary" type="submit" name="remove1" value="Remove">
+				<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+					</form>
+			</div>
+		</div>
+
+
+
+			<<?php  
 			if (isset($_POST['add']))
 				{
 					$product_code = $_POST['product_code'];
@@ -132,12 +161,24 @@
 				VALUES ('$product_code','$product_name','$product_price','$name','$category')");
 
 				$q2 = $conn->query("INSERT INTO stock ( product_id, qty) VALUES ('$product_code','$qty')");
-
-				header ("location:admin_DCK.php");
 			}}
 		}
 
-				?>
+		?>		
+
+<?php
+if (isset($_POST['remove1']))
+				{
+					$product_name = $_POST['product_name'];
+					
+				$q1 = $conn->query("DELETE FROM product WHERE product_name = '$product_name'");
+				}
+
+  ?>
+			
+
+
+
 
 	<div id="leftnav">
 		<ul>

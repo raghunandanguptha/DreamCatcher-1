@@ -84,8 +84,8 @@
 						<input type="text" name="mi" placeholder="Middle Initial" maxlength="1" required>
 						<input type="text" name="lastname" placeholder="Lastname" required>
 						<input type="text" name="address" placeholder="Address" style="width:430px;"required>
-						<input type="text" name="country" placeholder="Province" required >
-						<input type="text" name="zipcode" placeholder="ZIP Code" required maxlength="4">
+						<input type="text" name="country" placeholder="Country" required>
+						<input type="text" name="zipcode" placeholder="PIN Code" required maxlength="4">
 						<input type="text" name="mobile" placeholder="Mobile Number" maxlength="11">
 						<input type="text" name="telephone" placeholder="Telephone Number" maxlength="8">
 						<input type="email" name="email" placeholder="Email" required>
@@ -114,12 +114,12 @@
 
 	<div class="nav1">
 		<ul>
-			<li><a href="product.php">Basketball</a></li>
+			
+			<li><a href="product.php">DreamCatchers</a></li>
 			<li>|</li>
-			<li><a href="DreamCatchers.php" >DreamCatchers</a></li>
-			<li>|</li>
-			<li><a href="(DC)KeyChains.php" class="active" style="color:#111;">(DC)KeyChains</a></li>
+			<li><a href="KeyChain.php">(DC)KeyChains</a></li>
 		</ul>
+
 	</div>
 
 	<div id="content">
@@ -128,8 +128,9 @@
 		<div id="product">
 
 			<?php
+			include ('function/addcart.php');
 
-				$query = $conn->query("SELECT *FROM product WHERE category='(DC)KeyChains' ORDER BY product_id DESC") or die (mysqli_error());
+				$query = $conn->query("SELECT *FROM product WHERE category='small' ORDER BY product_id DESC") or die (mysqli_error());
 
 					while($fetch = $query->fetch_array())
 						{
@@ -150,7 +151,6 @@
 							echo "<br />";
 							echo "P ".$fetch['product_price']."";
 							echo "<br />";
-							echo "<h3 class='text-info' style='position:absolute; margin-top:-90px; text-indent:15px;'> Size: ".$fetch['product_size']."</h3>";
 							echo "</center>";
 							echo "</div>";
 						}
@@ -164,24 +164,9 @@
 
 
 
-	<br />
+		<br />
 </div>
-<br />
-	<div id="footer">
-		<div class="foot">
-			<label style="font-size:17px;"> Copyrght &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
-		</div>
-
-			<div id="foot">
-				<h4>Links</h4>
-					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
-					</ul>
-			</div>
-	</div>
+	<br />
+	
 </body>
 </html>

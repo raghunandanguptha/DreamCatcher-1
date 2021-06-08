@@ -65,8 +65,8 @@
 						<input type="text" name="mi" placeholder="Middle Initial" maxlength="1" required>
 						<input type="text" name="lastname" placeholder="Lastname" required>
 						<input type="text" name="address" placeholder="Address" style="width:430px;"required>
-						<input type="text" name="country" placeholder="Province" required>
-						<input type="text" name="zipcode" placeholder="ZIP Code" required maxlength="4">
+						<input type="text" name="country" placeholder="Country" required>
+						<input type="text" name="zipcode" placeholder="PIN Code" required maxlength="4">
 						<input type="text" name="mobile" placeholder="Mobile Number" maxlength="11">
 						<input type="text" name="telephone" placeholder="Telephone Number" maxlength="8">
 						<input type="email" name="email" placeholder="Email" required>
@@ -97,18 +97,11 @@
 
 		<div id="content">
 			<legend>Frequently Added Questions</legend>
-
-				 <h4>DO YOU SHIP?</h4>
-					<p style="text-indent:60px;">Yes, we ship the products via LBC and 2GO only.</p>
-				<hr>
-					<h4>DO YOU DELIVER?</h4>
-						<p style="text-indent:60px;">No, We only offer Shipping.</p>
+				
 				<hr>
 					<h4>WHEN WILL I GET MY ORDERS?</h4>
-						<p style="text-indent:60px;">We wil ship your product 2-3 days around Negros Occidental and It will take 4-6 days Nationwide.</p>
-				<hr>
-					<h4>HOW DO I PAY MY ORDERS?</h4>
-					<p style="text-indent:60px;">Through PAYPAL basis only.</p>
+						<p style="text-indent:60px;">We wil ship your product 2-3 days around usualy 4-6 days if Any Technical issues occurs.</p>
+			
 
 		</div>
 	<br />
@@ -117,18 +110,9 @@
 	<div id="footer">
 		<div class="foot">
 			<label style="font-size:17px;"> Copyrght &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			</p>
 		</div>
-
-			<div id="foot">
-				<h4>Links</h4>
-					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
-					</ul>
-			</div>
 	</div>
 </body>
 </html>
