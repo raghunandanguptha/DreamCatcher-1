@@ -127,7 +127,7 @@
 			<hr>
 				<h4>Online policy</h4>
 					<p>The Privacy Policy does not extend to anything that is inherent in the operation of the internet, and
-						therefore beyond adidas' control, and is not to be applied in any manner contrary to applicable law or
+						therefore beyond adidas control, and is not to be applied in any manner contrary to applicable law or
 						governmental regulation. This online privacy policy only applies to information collected through our
 						website and not to information collected offline.</p>
 
