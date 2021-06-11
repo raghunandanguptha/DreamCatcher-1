@@ -101,10 +101,10 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 			 <ul>
 				<li><a href="home.php">   <i class="icon-home"></i>Home</a></li>
 				<li><a href="product.php"> 			 <i class="icon-th-list"></i>Product</a></li>
-				<li><a href="aboutus1.php">   <i class="icon-bookmark"></i>About Us</a></li>
-				<li><a href="contactus1.php"><i class="icon-inbox"></i>Contact Us</a></li>
-				<li><a href="privacy1.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
-				<li><a href="faqs1.php"><i class="icon-question-sign"></i>FAQs</a></li>
+				<li><a href="aboutus.php">   <i class="icon-bookmark"></i>About Us</a></li>
+				<li><a href="contactus.php"><i class="icon-inbox"></i>Contact Us</a></li>
+				<li><a href="privacy.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
+				<li><a href="faqs.php"><i class="icon-question-sign"></i>FAQs</a></li>
 			</ul>
 	</div>
 
@@ -114,7 +114,6 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 		<tr>
 			<th><h5>Quantity</h5></td>
 			<th><h5>Product Name</h5></td>
-			<th><h5>Size</h5></td>
 			<th><h5>Price</h5></td>
 		</tr>
 
@@ -130,14 +129,12 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 		while($row = $query2->fetch_array()){
 
 		$pname = $row['product_name'];
-		$psize = $row['product_size'];
 		$pprice = $row['product_price'];
 		$oqty = $row['order_qty'];
 
 		echo "<tr>";
 		echo "<td>".$oqty."</td>";
 		echo "<td>".$pname."</td>";
-		echo "<td>".$psize."</td>";
 		echo "<td>".$pprice."</td>";
 		echo "</tr>";
 		}
@@ -145,7 +142,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 
 	</table>
 	<legend></legend>
-	<h4>TOTAL: Php <?php echo $amnt; ?></h4>
+	<h4>TOTAL: RS <?php echo $amnt; ?></h4>
 	</form>
 	<div class='pull-right'>
 <div class="">

@@ -115,7 +115,7 @@
 					<center>
 						<img class="img-polaroid" style="width:400px; height:350px;" src="photo/<?php echo $row['product_image']; ?>">
 						<h2 class="text-uppercase bg-primary"><?php echo $row['product_name']?></h2>
-						<h3 class="text-uppercase">Php <?php echo $row['product_price']?></h3>
+						<h3 class="text-uppercase">RS <?php echo $row['product_price']?></h3>
 						<?php echo "<a href='cart.php?id=".$id."&action=add'><input type='submit' class='btn btn-inverse' name='add' value='Add to Cart'></a> &nbsp;  <a href='product.php'><button class='btn btn-inverse'>Back</button></a> " ?>
 					</center>
 				</div>
@@ -188,26 +188,10 @@
 	<div id="footer">
 		<div class="foot">
 			<label style="font-size:17px;"> Copyrght &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			</p>
 		</div>
-
-			<div id="foot">
-				<h4>Links</h4>
-					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
-					</ul>
-			</div>
-
-			<div id="develop">
-				<h4>Developed By:</h4>
-					<ul>
-						<a href="#"><li>Allen Joshua Nicor</li><a>
-						<a href="#"><li>Ryan Carl Biaquis</li><a>
-					</ul>
-			</div>
+	</div>
 	</div>
 </body>
 </html>

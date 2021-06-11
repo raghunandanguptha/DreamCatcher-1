@@ -117,11 +117,7 @@
 
 			if(isset($POST['send']));
 			{
-				?>
-				<script type="text/javascript">
-				alert("Message sent")
-				</script>
-				<?php  
+				 
 				@$email = $_POST['email'];
 				@$message = $_POST['message'];
 
