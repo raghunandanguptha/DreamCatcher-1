@@ -180,7 +180,7 @@ if (isset($_POST['remove1']))
 
 
 
-	<div id="leftnav">
+	<div style="position: absolute; top:10.4%" id="leftnav">
 		<ul>
 			<li><a href="admin_home.php" style="color:#333;">Dashboard</a></li>
 			<li><a href="admin_home.php">Products</a>

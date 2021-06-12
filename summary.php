@@ -175,7 +175,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 				<div class="modal-body">
 					<form method="post">
 					<center>
-						<input type="image" src="images/button.jpg" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
+						<input type="image"  border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
 						<br/>
 						<br/>
 						<button class="btn btn-lg" >Cash</button>
@@ -195,7 +195,9 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 	<div id="footer">
 		<div class="foot">
 			<label style="font-size:17px;"> Copyrght &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>
+			   <a href="https://raghunandanguptha.github.io/"><li>Website : https://raghunandanguptha.github.io/</li></a>
+			   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
 			</p>
 		</div>
 	</div>

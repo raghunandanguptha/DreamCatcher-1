@@ -103,9 +103,6 @@
 								<td><input type="text" name="product_price" placeholder="Price" style="width:250px;" required></td>
 							</tr>
 							<tr>
-								<td><input type="text" name="product_size" placeholder="Size" style="width:250px;" maxLength="2" required></td>
-							</tr>
-							<tr>
 								<td><input type="text" name="brand" placeholder="Brand Name	" style="width:250px;" required></td>
 							</tr>
 							<tr>
@@ -130,7 +127,6 @@
 					$product_code = $_POST['product_code'];
 					$product_name = $_POST['product_name'];
 					$product_price = $_POST['product_price'];
-					$product_size = $_POST['product_size'];
 					$brand = $_POST['brand'];
 					$category = $_POST['category'];
 					$qty = $_POST['qty'];
@@ -155,8 +151,8 @@
 										move_uploaded_file($temp,"../photo/".$name);
 
 
-				$q1 = $conn->query("INSERT INTO product ( product_id,product_name, product_price, product_size, product_image, brand, category)
-				VALUES ('$product_code','$product_name','$product_price','$product_size','$name', '$brand', '$category')");
+				$q1 = $conn->query("INSERT INTO product ( product_id,product_name, product_price, product_image, brand, category)
+				VALUES ('$product_code','$product_name','$product_price','$name', '$brand', '$category')");
 
 				$q2 = $conn->query("INSERT INTO stock ( product_id, qty) VALUES ('$product_code','$qty')");
 
@@ -166,7 +162,7 @@
 
 				?>
 
-	<div id="leftnav">
+	<div style="position: absolute; top:13%" id="leftnav">
 		<ul>
 			<li><a href="admin_home.php" style="color:#333;">Dashboard</a></li>
 			<li><a href="admin_home.php">Products</a>
@@ -199,7 +195,6 @@
 		<tr>
 			<th><h5>Quantity</h5></td>
 			<th><h5>Product Name</h5></td>
-			<th><h5>Size</h5></td>
 			<th><h5>Price</h5></td>
 		</tr>
 
@@ -215,14 +210,12 @@
 		while($row = $query2->fetch_array()){
 
 		$pname = $row['product_name'];
-		$psize = $row['product_size'];
 		$pprice = $row['product_price'];
 		$oqty = $row['order_qty'];
 
 		echo "<tr>";
 		echo "<td>".$oqty."</td>";
 		echo "<td>".$pname."</td>";
-		echo "<td>".$psize."</td>";
 		echo "<td>".$pprice."</td>";
 		echo "</tr>";
 		}
@@ -230,7 +223,7 @@
 
 	</table>
 	<legend></legend>
-	<h4>TOTAL: Php <?php echo $amnt; ?></h4>
+	<h4>TOTAL: RS <?php echo $amnt; ?></h4>
 	</center>
 	</div>
 

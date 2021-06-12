@@ -173,19 +173,12 @@
 	<br />
 	<div id="footer">
 		<div class="foot">
-			<label style="font-size:17px;"> Copyright &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
+			<label style="font-size:17px;"> Copyrght &copy; </label>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>
+			   <a href="https://raghunandanguptha.github.io/"><li>Website : https://raghunandanguptha.github.io/</li></a>
+			   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			</p>
 		</div>
-
-			<div id="foot">
-				<h4>Links</h4>
-					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
-					</ul>
-			</div>
 	</div>
 </body>
 </html>

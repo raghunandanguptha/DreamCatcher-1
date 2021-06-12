@@ -133,8 +133,8 @@
 										move_uploaded_file($temp,"../photo/".$name);
 
 
-				$q1 = $conn->query("INSERT INTO product ( product_id,product_name, product_price, product_size, product_image, brand, category)
-				VALUES ('$product_code','$product_name','$product_price','$product_size','$name', '$brand', '$category')");
+				$q1 = $conn->query("INSERT INTO product ( product_id,product_name, product_price, product_image, category)
+				VALUES ('$product_code','$product_name','$product_price','$name', '$category')");
 
 				$q2 = $conn->query("INSERT INTO stock ( product_id, qty) VALUES ('$product_code','$qty')");
 
@@ -144,7 +144,7 @@
 
 				?>
 
-	<div id="leftnav">
+	<div style="position: absolute; top:10.4%" id="leftnav">
 		<ul>
 			<li><a href="admin_home.php" style="color:#333;">Dashboard</a></li>
 			<li><a href="admin_home.php">Products</a>
