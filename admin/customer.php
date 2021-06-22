@@ -26,7 +26,7 @@
 </head>
 <body>
 	<div id="header" style="position:fixed;">
-		<img src="../img/logo.jpg">
+		<img src="../img/DClogo.jpg">
 		<label>Dream Catchers Zone</label>
 
 			<?php

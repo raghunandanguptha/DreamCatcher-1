@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Dream Catchers Zone</title>
-	<link rel="icon" href="img/logo.jpg" />
+	<link rel="icon" href="img/DClogo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="../css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<script src="js/bootstrap.js"></script>
@@ -22,7 +22,7 @@
 </head>
 <body>
 	<div id="header">
-		<img src="../img/logo.jpg">
+		<img src="../img/DClogo.jpg">
 		<label>Dream Catchers Zone</label>
 		<ul>
 				<li><a href="../index.php">MainPage</a></li>

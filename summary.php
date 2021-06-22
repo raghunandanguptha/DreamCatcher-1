@@ -9,7 +9,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 <html>
 <head>
 	<title>Dream Catchers Zone</title>
-	<link rel="icon" href="img/logo.jpg" />
+	<link rel="icon" href="img/DClogo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/bootstrap.js"></script>
@@ -30,8 +30,8 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 <body>
 
 	<div id="header">
-		<img src="img/logo.jpg">
-		<label> Shoe Store</label>
+		<img src="img/DClogo.jpg">
+		<label>Dream CatcherZone</label>
 
 			<?php
 				$id = (int) $_SESSION['id'];
@@ -108,7 +108,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 			</ul>
 	</div>
 
-	<form method="post" class="well"  style="background-color:#fff; overflow:hidden;">
+	<form action="paynow.php" method="post" class="well"  style="background-color:#fff; overflow:hidden;">
 	<table class="table" style="width:50%;">
 	<label style="font-size:25px;">Summary of Order/s</label>
 		<tr>
@@ -143,50 +143,10 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 	</table>
 	<legend></legend>
 	<h4>TOTAL: RS <?php echo $amnt; ?></h4>
+	<br>
+	<input type="submit" value="Pay Now" name="paynw">
 	</form>
-	<div class='pull-right'>
-<div class="">
-    <form action="<?php echo $paypal_url ?>" method="post" >
-    <input type="hidden" name="business" value="<?php echo $paypal_id; ?>">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="item_name" value="Alphaware Shoes">
-    <input type="hidden" name="item_number" value="<?php echo $t_id; ?>">
-    <input type="hidden" name="credits" value="510">
-    <input type="hidden" name="userid" value="1">
-    <input type="hidden" name="amount" value="<?php echo $amnt; ?>">
-    <input type="hidden" name="cpp_header_image" value="http://www.phpgang.com/wp-content/uploads/gang.jpg">
-    <input type="hidden" name="no_shipping" value="1">
-    <input type="hidden" name="currency_code" value="PHP">
-    <input type="hidden" name="handling" value="0">
-    <input type="hidden" name="cancel_return" value="function/cancel.php">
-    <input type="hidden" name="return" value="function/success.php">
-    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-</div>
-	</div>
-
-
-		<div id="purchase" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:400px;">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-				<h3 id="myModalLabel">Mode Of Payment</h3>
-			</div>
-				<div class="modal-body">
-					<form method="post">
-					<center>
-						<input type="image"  border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
-						<br/>
-						<br/>
-						<button class="btn btn-lg" >Cash</button>
-					</center>
-				</div>
-			<div class="modal-footer">
-				<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
-					</form>
-			</div>
-		</div>
-
+	
 
 		<br />
 		<br />
