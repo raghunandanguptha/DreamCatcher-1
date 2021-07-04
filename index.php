@@ -27,7 +27,7 @@
 <body>
 	<div id="header">
 		<img src="img/DClogo.jpg">
-		<label>Dream Catchers Zone</label>
+		<label>Dream Cat</label>
 			<ul>
 				<li><a href="admin/admin_index.php">Admin</a></li>
 				<li><a href="#signup"   data-toggle="modal">Sign Up</a></li>
