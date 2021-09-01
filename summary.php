@@ -148,6 +148,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 <<<<<<< HEAD
 	<h4>TOTAL: RS <?php echo $amnt; ?></h4>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<br>
 	<input type="submit" value="Pay Now" name="paynw">
 =======
@@ -157,6 +158,9 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 <<<<<<< HEAD
 	
 =======
+=======
+	</form>
+>>>>>>> parent of b0962e0 (befor hosting)
 =======
 	</form>
 >>>>>>> parent of b0962e0 (befor hosting)
@@ -192,7 +196,11 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 					<form method="post">
 					<center>
 <<<<<<< HEAD
+<<<<<<< HEAD
 						<input type="image" src="images/button.jpg" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
+=======
+						<input type="image"  border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
+>>>>>>> parent of b0962e0 (befor hosting)
 =======
 						<input type="image"  border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
 >>>>>>> parent of b0962e0 (befor hosting)
@@ -208,7 +216,10 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 		</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 6ff51eb (saturday12-06-2021)
+=======
+>>>>>>> parent of b0962e0 (befor hosting)
 =======
 >>>>>>> parent of b0962e0 (befor hosting)
 

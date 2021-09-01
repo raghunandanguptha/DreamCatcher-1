@@ -27,9 +27,12 @@
 <body>
 	<div id="header">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<img src="img/DClogo.jpg">
 		<label>Dream Cat</label>
 =======
+=======
+>>>>>>> parent of b0962e0 (befor hosting)
 		<img src="img/logo.jpg">
 		<label>Dream Catchers Zone</label>
 >>>>>>> parent of b0962e0 (befor hosting)
