@@ -6,7 +6,7 @@
 <html>
 <head>
 	<title>Dream Catchers Zone</title>
-	<link rel="icon" href="img/DClogo.jpg" />
+	<link rel="icon" href="img/logo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/bootstrap.js"></script>
@@ -26,13 +26,13 @@
 </head>
 <body>
 	<div id="header">
-		<img src="img/DClogo.jpg">
+		<img src="img/logo.jpg">
 		<label>Dream Catchers Zone</label>
 
 			<?php
 				$id = (int) $_SESSION['id'];
 
-					$query = $conn->query ("SELECT * FROM customer WHERE customerid = '$id' ") or die (mysql_error());
+					$query = $conn->query ("SELECT * FROM customer WHERE customerid = '$id' ") or die (mysqli_error());
 					$fetch = $query->fetch_array ();
 			?>
 
@@ -103,57 +103,39 @@
 				<li><a href="faqs1.php"><i class="icon-question-sign"></i>FAQs</a></li>
 			</ul>
 	</div>
-	<br>
+		<img src="img/about1.jpg" style="width:1150px; height:250px; border:1px solid #000; ">
+	<br />
+	<br />
 
-	<form action="https://www.sandbox.paypal.com/cgi-bin/webscr"  method="post">
-        <!-- the cmd parameter is set to _xclick for a Buy Now button -->
-<?php
-$cusid=$_POST['cusid'];
-$total=$_POST['total'];
-$time=$_POST['time'];
-$portal=$_POST['portal'];
-$distination=$_POST['distination'];
-$transactioncode=$_POST['transactioncode'];
 
-if($portal=='Pick-Up'){
-$charge=0;
-}
-if($portal=='Delivery'){
-$charge=50;
-}
-if($distination=='City Proper'){
-$charge1=0;
-}
-if($distination=='Outside City'){
-$charge1=50;
-}
-$totalcharge=$charge+$charge1;
-$grandtotal=$totalcharge+$total;
-?>
+	<legend>About Us</legend>
+		<div id="content">
+			<legend><h3>Mission</h3></legend>
+					<h4 style="text-indent:60px;">To provide a high quality footwear that suit the athletes style and to be one of the leading sports footwear apparel in the country.</h4>
+			<br />
+				<legend><h3>Vision</h3></legend>
+					<h4 style="text-indent:60px;">Dream Catchers Zone, the company that inspire, motivate, and give determination to the sports enthusiast.</h4>
+			<br />
 
-	<input type="hidden" name="cmd" value="_xclick" />
-        <input type="hidden" name="business" value="mamma__1330248786_biz@yahoo.com" />
-        <input type="hidden" name="item_name" value="<?php echo $cusid; ?>" />
-        <input type="hidden" name="item_number" value="<?php echo $transactioncode; ?>" />
-        <input type="hidden" name="amount" value="<?php echo $grandtotal; ?>" />
-        <input type="hidden" name="no_shipping" value="1" />
-        <input type="hidden" name="no_note" value="1" />
-        <input type="hidden" name="currency_code" value="PHP" />
-        <input type="hidden" name="lc" value="GB" />
-        <input type="hidden" name="bn" value="PP-BuyNowBF" /><br />
-		<div style="margin:0 auto; width:50px;">
-        <input type="image" src="images/button.jpg" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
-        <img alt="fdff" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
 		</div>
-        <!-- Payment confirmed -->
-        <input type="hidden" name="return" value="http://mammamarias.elementfx.com/showconfirm.php" />
-        <!-- Payment cancelled -->
-        <input type="hidden" name="cancel_return" value="http://mammamarias.elementfx.com/cancel.php" />
-        <input type="hidden" name="rm" value="2" />
-        <input type="hidden" name="notify_url" value="http://mammamarias.elementfx.com/ipn.php" />
-        <input type="hidden" name="custom" value="any other custom field you want to pass" />
-    </form>
-
+	<br />
 </div>
+	<br />
+	<div id="footer">
+		<div class="foot">
+			<label style="font-size:17px;"> Copyright &copy; </label>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
+		</div>
+
+			<div id="foot">
+				<h4>Links</h4>
+					<ul>
+						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
+						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
+						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
+						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
+					</ul>
+			</div>
+	</div>
 </body>
 </html>

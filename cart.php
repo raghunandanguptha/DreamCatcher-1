@@ -97,10 +97,10 @@
 			 <ul>
 				<li><a href="home.php">   <i class="icon-home"></i>Home</a></li>
 				<li><a href="product.php"> 			 <i class="icon-th-list"></i>Product</a></li>
-				<li><a href="aboutus.php">   <i class="icon-bookmark"></i>About Us</a></li>
-				<li><a href="contactus.php"><i class="icon-inbox"></i>Contact Us</a></li>
-				<li><a href="privacy.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
-				<li><a href="faqs.php"><i class="icon-question-sign"></i>FAQs</a></li>
+				<li><a href="aboutus1.php">   <i class="icon-bookmark"></i>About Us</a></li>
+				<li><a href="contactus1.php"><i class="icon-inbox"></i>Contact Us</a></li>
+				<li><a href="privacy1.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
+				<li><a href="faqs1.php"><i class="icon-question-sign"></i>FAQs</a></li>
 			</ul>
 	</div>
 
@@ -110,6 +110,7 @@
 		<tr>
 			<th><h3>Image</h3></td>
 			<th><h3>Product Name</h3></th>
+			<th><h3>Size</h3></th>
 			<th><h3>Quantity</h3></th>
 			<th><h3>Price</h3></th>
 			<th><h3>Add</h3></th>
@@ -166,6 +167,7 @@ if (isset($_SESSION['cart']))
 	$name=substr($name,0,40);
 	$price=$myrow['product_price'];
 	$image=$myrow['product_image'];
+	$product_size=$myrow['product_size'];
 	$line_cost=$price*$x;
 	$total=$total+$line_cost;
 
@@ -173,11 +175,12 @@ if (isset($_SESSION['cart']))
 		echo "<tr class='table'>";
 		echo "<td><h4><img height='70px' width='70px' src='photo/".$image."'></h4></td>";
 		echo "<td><h4><input type='hidden' required value='".$id."' name='pid[]'> ".$name."</h4></td>";
+		echo "<td><h4>".$product_size."</h4></td>";
 		echo "<td><h4><input type='hidden' required value='".$x."' name='qty[]'> ".$x."</h4></td>";
 		echo "<td><h4>".$price."</h4></td>";
 		echo "<td><h4><a href='cart.php?id=".$id."&action=add'><i class='icon-plus-sign'></i></a></td>";
 		echo "<td><h4><a href='cart.php?id=".$id."&action=remove'><i class='icon-minus-sign'></i></a></td>";
-		echo "<td><strong><h3>RS ".$line_cost."</h3></strong>";
+		echo "<td><strong><h3>P ".$line_cost."</h3></strong>";
 		echo "</tr>";
 		}
 
@@ -187,7 +190,7 @@ if (isset($_SESSION['cart']))
 		echo "<td></td>";
 		echo "<td></td>";
 		echo "<td><h2>TOTAL:</h2></td>";
-		echo "<td><strong><input type='hidden' value='".$total."' required name='total'><h2 class='text-danger'>RS ".$total."</h2></strong></td>";
+		echo "<td><strong><input type='hidden' value='".$total."' required name='total'><h2 class='text-danger'>P ".$total."</h2></strong></td>";
 		echo "<td></td>";
 		echo "<td><a class='btn btn-danger btn-sm pull-right' href='cart.php?id=".$id."&action=empty'><i class='fa fa-trash-o'></i> Empty cart</a></td>";
 		echo "</tr>";
@@ -234,12 +237,27 @@ if (isset($_SESSION['cart']))
 <br />
 	<div id="footer">
 		<div class="foot">
+<<<<<<< HEAD
+			<label style="font-size:17px;"> Copyright &copy; </label>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
+=======
 			<label style="font-size:17px;"> Copyrght &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>
-			   <a href="https://raghunandanguptha.github.io/"><li>Website : https://raghunandanguptha.github.io/</li></a>
-			   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
 			</p>
+>>>>>>> parent of 6ff51eb (saturday12-06-2021)
 		</div>
+
+			<div id="foot">
+				<h4>Links</h4>
+					<ul>
+						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
+						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
+						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
+						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
+					</ul>
+			</div>
+	</div>
+	</div>
 	</div>
 </body>
 </html>

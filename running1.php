@@ -99,10 +99,10 @@
 			 <ul>
 				<li><a href="home.php"><i class="icon-home"></i>Home</a></li>
 				<li><a href="product.php"><i class="icon-th-list"></i>Product</a>
-				<li><a href="aboutus.php"><i class="icon-bookmark"></i>About Us</a></li>
-				<li><a href="contactus.php"><i class="icon-inbox"></i>Contact Us</a></li>
-				<li><a href="privacy.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
-				<li><a href="faqs.php"><i class="icon-question-sign"></i>FAQs</a></li>
+				<li><a href="aboutus1.php"><i class="icon-bookmark"></i>About Us</a></li>
+				<li><a href="contactus1.php"><i class="icon-inbox"></i>Contact Us</a></li>
+				<li><a href="privacy1.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
+				<li><a href="faqs1.php"><i class="icon-question-sign"></i>FAQs</a></li>
 			</ul>
 		</div>
 
@@ -143,7 +143,7 @@
 							echo "<a href='details.php?id=".$fetch['product_id']."'><img class='img-polaroid' src='photo/".$fetch['product_image']."' height = '300px' width = '300px'></a>";
 							echo "".$fetch['product_name']."";
 							echo "<br />";
-							echo "RS ".$fetch['product_price']."";
+							echo "P ".$fetch['product_price']."";
 							echo "<br />";
 							echo "<h3 class='text-info' style='position:absolute; margin-top:-90px; text-indent:15px;'> Size: ".$fetch['product_size']."</h3>";
 							echo "</center>";

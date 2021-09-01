@@ -1,15 +1,12 @@
 <?php
-$paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr'; // Test Paypal API URL
-$paypal_id='yhannaki@gmail.com'; // Business email ID
-?>
-<?php
-	include("function/session.php");
+	//include("function/session.php");
 	include("db/dbconn.php");
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Dream Catchers Zone</title>
-	<link rel="icon" href="img/DClogo.jpg" />
+	<link rel="icon" href="img/logo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/bootstrap.js"></script>
@@ -28,21 +25,21 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-
 	<div id="header">
-		<img src="img/DClogo.jpg">
-		<label>Dream CatcherZone</label>
+		<img src="img/logo.jpg">
+		<label>Dream Catchers Zone</label>
 
 			<?php
-				$id = (int) $_SESSION['id'];
+				/*$id = (int) $_SESSION['id'];
 
 					$query = $conn->query ("SELECT * FROM customer WHERE customerid = '$id' ") or die (mysqli_error());
-					$fetch = $query->fetch_array ();
+					$fetch = $query->fetch_array ($query);
+					*/
 			?>
 
 			<ul>
-				<li><a href="function/logout.php"><i class="icon-off icon-white"></i>logout</a></li>
-				<li>Welcome:&nbsp;&nbsp;&nbsp;<a href="#profile"  data-toggle="modal"><i class="icon-user icon-white"></i><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['lastname'];?></a></li>
+				<li><a href="#signup"   data-toggle="modal">Sign Up</a></li>
+				<li><a href="#login"   data-toggle="modal">Login</a></li>
 			</ul>
 	</div>
 
@@ -53,10 +50,11 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 				</div>
 					<div class="modal-body">
 						<?php
-							$id = (int) $_SESSION['id'];
+							/*$id = (int) $_SESSION['id'];
 
 								$query = $conn->query ("SELECT * FROM customer WHERE customerid = '$id' ") or die (mysqli_error());
-								$fetch = $query->fetch_array ();
+								$fetch = $query->fetch_array ($query);
+								*/
 						?>
 						<center>
 					<form method="post">
@@ -101,83 +99,115 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 			 <ul>
 				<li><a href="home.php">   <i class="icon-home"></i>Home</a></li>
 				<li><a href="product.php"> 			 <i class="icon-th-list"></i>Product</a></li>
-				<li><a href="aboutus1.php">   <i class="icon-bookmark"></i>About Us</a></li>
-				<li><a href="contactus1.php"><i class="icon-inbox"></i>Contact Us</a></li>
-				<li><a href="privacy1.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
-				<li><a href="faqs1.php"><i class="icon-question-sign"></i>FAQs</a></li>
+				<li><a href="aboutus.php">   <i class="icon-bookmark"></i>About Us</a></li>
 			</ul>
 	</div>
 
-	<form action="paynow.php" method="post" class="well"  style="background-color:#fff; overflow:hidden;">
-	<table class="table" style="width:50%;">
-	<label style="font-size:25px;">Summary of Order/s</label>
+	<form method="post" class="well" style="background-color:#fff;">
+	<table class="table">
+	<label style="font-size:25px;">My Cart</label>
 		<tr>
-			<th><h5>Quantity</h5></td>
-			<th><h5>Product Name</h5></td>
-			<th><h5>Size</h5></td>
-			<th><h5>Price</h5></td>
+			<th><h3>Image</h3></td>
+			<th><h3>Product Name</h3></th>
+			<th><h3>Size</h3></th>
+			<th><h3>Quantity</h3></th>
+			<th><h3>Price</h3></th>
+			<th><h3>Add</h3></th>
+			<th><h3>Remove</h3></th>
+			<th><h3>Subtotal</h3></th>
 		</tr>
 
-		<?php
-		$t_id = $_GET['tid'];
-		$query = $conn->query("SELECT * FROM transaction WHERE transaction_id = '$t_id'") or die (mysqli_error());
-		$fetch = $query->fetch_array();
+<?php
 
-		$amnt = $fetch['amount'];
-		$t_id = $fetch['transaction_id'];
 
-		$query2 = $conn->query("SELECT * FROM transaction_detail LEFT JOIN product ON product.product_id = transaction_detail.product_id WHERE transaction_detail.transaction_id = '$t_id'") or die (mysqli_error());
-		while($row = $query2->fetch_array()){
+	if (isset($_GET['id']))
+	$id=$_GET['id'];
+	else
+	$id=1;
+	if (isset($_GET['action']))
+	$action=$_GET['action'];
+	else
+	$action="empty";
 
-		$pname = $row['product_name'];
-		$psize = $row['product_size'];
-		$pprice = $row['product_price'];
-		$oqty = $row['order_qty'];
+	switch($action)
+	{
 
-		echo "<tr>";
-		echo "<td>".$oqty."</td>";
-		echo "<td>".$pname."</td>";
-		echo "<td>".$psize."</td>";
-		echo "<td>".$pprice."</td>";
+		case "view":
+			if (isset($_SESSION['cart'][$id]))
+			$_SESSION['cart'][$id];
+		break;
+		case "add":
+			if (isset($_SESSION['cart'][$id]))
+			$_SESSION['cart'][$id]++;
+			else
+			$_SESSION['cart'][$id]=1;
+		break;
+		case "remove":
+			if (isset($_SESSION['cart'][$id]))
+			{
+				$_SESSION['cart'][$id]--;
+				if ($_SESSION['cart'][$id]==0)
+				unset($_SESSION['cart'][$id]);
+			}
+		break;
+		case "empty":
+			unset($_SESSION['cart']);
+		break;
+	}
+if (isset($_SESSION['cart']))
+	{
+
+	$total=0;
+	foreach($_SESSION['cart'] as $id => $x)
+	{
+	$result=$conn->query("Select * from product where product_id=$id");
+	$myrow=$result->fetch_array($result);
+	$name=$myrow['product_name'];
+	$name=substr($name,0,40);
+	$price=$myrow['product_price'];
+	$image=$myrow['product_image'];
+	$product_size=$myrow['product_size'];
+	$line_cost=$price*$x;
+	$total=$total+$line_cost;
+
+
+		echo "<tr class='table'>";
+		echo "<td><h4><img height='70px' width='70px' src='photo/".$image."'></h4></td>";
+		echo "<td><h4><input type='hidden' required value='".$id."' name='pid[]'> ".$name."</h4></td>";
+		echo "<td><h4>".$product_size."</h4></td>";
+		echo "<td><h4><input type='hidden' required value='".$x."' name='qty[]'> ".$x."</h4></td>";
+		echo "<td><h4>".$price."</h4></td>";
+		echo "<td><h4><a href='cart.php?id=".$id."&action=add'><i class='icon-plus-sign'></i></a></td>";
+		echo "<td><h4><a href='cart.php?id=".$id."&action=remove'><i class='icon-minus-sign'></i></a></td>";
+		echo "<td><strong><h3>P ".$line_cost."</h3></strong>";
 		echo "</tr>";
 		}
-		?>
 
+		echo"<tr>";
+		echo "<td></td>";
+		echo "<td></td>";
+		echo "<td></td>";
+		echo "<td></td>";
+		echo "<td><h2>TOTAL:</h2></td>";
+		echo "<td><strong><input type='hidden' value='".$total."' required name='total'><h2 class='text-danger'>P ".$total."</h2></strong></td>";
+		echo "<td></td>";
+		echo "<td><a class='btn btn-danger btn-sm pull-right' href='cart.php?id=".$id."&action=empty'><i class='fa fa-trash-o'></i> Empty cart</a></td>";
+		echo "</tr>";
+	}
+ 	else
+		echo "<font color='#111' class='alert alert-error' style='float:right'>Cart is empty</font>";
+
+?>
 	</table>
-	<legend></legend>
-<<<<<<< HEAD
-	<h4>TOTAL: RS <?php echo $amnt; ?></h4>
-	<br>
-	<input type="submit" value="Pay Now" name="paynw">
-=======
-	<h4>TOTAL: Php <?php echo $amnt; ?></h4>
->>>>>>> parent of 0e70a84 (10-Monday-06-2021)
-	</form>
-<<<<<<< HEAD
-	
-=======
-	<div class='pull-right'>
-<div class="">
-    <form action="<?php echo $paypal_url ?>" method="post" >
-    <input type="hidden" name="business" value="<?php echo $paypal_id; ?>">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="item_name" value="Alphaware Shoes">
-    <input type="hidden" name="item_number" value="<?php echo $t_id; ?>">
-    <input type="hidden" name="credits" value="510">
-    <input type="hidden" name="userid" value="1">
-    <input type="hidden" name="amount" value="<?php echo $amnt; ?>">
-    <input type="hidden" name="cpp_header_image" value="http://www.phpgang.com/wp-content/uploads/gang.jpg">
-    <input type="hidden" name="no_shipping" value="1">
-    <input type="hidden" name="currency_code" value="PHP">
-    <input type="hidden" name="handling" value="0">
-    <input type="hidden" name="cancel_return" value="function/cancel.php">
-    <input type="hidden" name="return" value="function/success.php">
-    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-</div>
-	</div>
 
+
+	<div class='pull-right'>
+	<a href='product.php' class='btn btn-inverse btn-lg'>Continue Shopping</a>
+	<?php echo "<button name='pay_now' type='submit' class='btn btn-inverse btn-lg' >Purchase</button>";
+	include ("function/paypal.php");
+	?>
+	</form>
+	</div>
 
 		<div id="purchase" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:400px;">
 			<div class="modal-header">
@@ -199,7 +229,6 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 			</div>
 		</div>
 
->>>>>>> parent of 6ff51eb (saturday12-06-2021)
 
 		<br />
 		<br />
@@ -208,9 +237,19 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 	<div id="footer">
 		<div class="foot">
 			<label style="font-size:17px;"> Copyrght &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
-			</p>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
 		</div>
+
+			<div id="foot">
+				<h4>Links</h4>
+					<ul>
+						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
+						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
+						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
+						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
+					</ul>
+			</div>
+
 	</div>
 </body>
 </html>

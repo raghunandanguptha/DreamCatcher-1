@@ -1,5 +1,6 @@
 <?php
-	include("function/session.php");
+
+	//include("function/session.php");
 	include("db/dbconn.php");
 	include("function/cash.php");
 	include("function/paypal.php");
@@ -8,7 +9,7 @@
 <html>
 <head>
 	<title>Dream Catchers Zone</title>
-	<link rel="icon" href="img/DClogo.jpg" />
+	<link rel="icon" href="img/logo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/bootstrap.js"></script>
@@ -28,19 +29,20 @@
 </head>
 <body>
 	<div id="header">
-		<img src="img/DClogo.jpg">
+		<img src="img/logo.jpg">
 		<label>Dream Catchers Zone</label>
 
 			<?php
-				$id = (int) $_SESSION['id'];
+				//$id = (int) $_SESSION['id'];
 
-					$query = $conn->query ("SELECT * FROM customer WHERE customerid = '$id' ") or die (mysqli_error());
-					$fetch = $query->fetch_array ();
+					//$query = $conn->query ("SELECT * FROM customer WHERE customerid = '$id' ") or die (mysqli_error());
+					//$fetch = $query->fetch_array ($query);
 			?>
 
 			<ul>
-				<li><a href="function/logout.php"><i class="icon-off icon-white"></i>logout</a></li>
-				<li>Welcome:&nbsp;&nbsp;&nbsp;<a href="#profile" href  data-toggle="modal"><i class="icon-user icon-white"></i><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['lastname'];?></a></li>
+				<li><a href="#signup"   data-toggle="modal">Sign Up</a></li>
+				<li><a href="#login"   data-toggle="modal">Login</a></li>
+
 			</ul>
 	</div>
 
@@ -100,9 +102,6 @@
 				<li><a href="home.php">   <i class="icon-home"></i>Home</a></li>
 				<li><a href="product.php"> 			 <i class="icon-th-list"></i>Product</a></li>
 				<li><a href="aboutus.php">   <i class="icon-bookmark"></i>About Us</a></li>
-				<li><a href="contactus.php"><i class="icon-inbox"></i>Contact Us</a></li>
-				<li><a href="privacy.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
-				<li><a href="faqs.php"><i class="icon-question-sign"></i>FAQs</a></li>
 			</ul>
 	</div>
 		<?php
@@ -116,7 +115,8 @@
 						<img class="img-polaroid" style="width:400px; height:350px;" src="photo/<?php echo $row['product_image']; ?>">
 						<h2 class="text-uppercase bg-primary"><?php echo $row['product_name']?></h2>
 						<h3 class="text-uppercase">Php <?php echo $row['product_price']?></h3>
-						<?php echo "<a href='cart.php?id=".$id."&action=add'><input type='submit' class='btn btn-inverse' name='add' value='Add to Cart'></a> &nbsp;  <a href='product.php'><button class='btn btn-inverse'>Back</button></a> " ?>
+						<h3 class="text-uppercase">Size: <?php echo $row['product_size']?></h3>
+						<?php echo "<a href='cart2.php?id=".$id."&action=add'><input type='submit' class='btn btn-inverse' name='add' value='Add to Cart'></a> &nbsp;  <a href='product.php'><button class='btn btn-inverse'>Back</button></a> " ?>
 					</center>
 				</div>
 		<?php }?>
@@ -188,34 +188,9 @@
 	<div id="footer">
 		<div class="foot">
 			<label style="font-size:17px;"> Copyrght &copy; </label>
-<<<<<<< HEAD
-<<<<<<< HEAD
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2017 Brought To You by <a href="https://code-projects.org/">Code-Projects</a></p>
-=======
-=======
->>>>>>> parent of 6ff51eb (saturday12-06-2021)
 			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
 			</p>
->>>>>>> parent of 6ff51eb (saturday12-06-2021)
 		</div>
-
-			<div id="foot">
-				<h4>Links</h4>
-					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
-					</ul>
-			</div>
-
-			<div id="develop">
-				<h4>Developed By:</h4>
-					<ul>
-						<a href="#"><li>Allen Joshua Nicor</li><a>
-						<a href="#"><li>Ryan Carl Biaquis</li><a>
-					</ul>
-			</div>
 	</div>
 </body>
 </html>

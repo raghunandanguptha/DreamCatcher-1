@@ -44,7 +44,7 @@
 
 	<br>
 
-	<div style="position: absolute; top:10.4%" id="leftnav">
+	<div id="leftnav">
 		<ul>
 			<li><a href="admin_home.php" style="color:#333;">Dashboard</a></li>
 			<li><a href="admin_home.php">Products</a>

@@ -6,7 +6,6 @@
 <html>
 <head>
 	<title>Dream Catchers Zone</title>
-	<link rel="icon" href="img/DClogo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/bootstrap.js"></script>
@@ -26,13 +25,13 @@
 </head>
 <body>
 	<div id="header">
-		<img src="img/DClogo.jpg">
+		<img src="img/logo.jpg">
 		<label>Dream Catchers Zone</label>
 
 			<?php
 				$id = (int) $_SESSION['id'];
 
-					$query = $conn->query ("SELECT * FROM customer WHERE customerid = '$id' ") or die (mysql_error());
+					$query = $conn->query ("SELECT * FROM customer WHERE customerid = '$id' ") or die (mysqli_error());
 					$fetch = $query->fetch_array ();
 			?>
 
@@ -42,7 +41,7 @@
 			</ul>
 	</div>
 
-	<div id="profile" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:700px;">
+		<div id="profile" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:700px;">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
 					<h3 id="myModalLabel">My Account</h3>
@@ -91,69 +90,84 @@
 
 
 
+
 	<br>
 <div id="container">
+
 	<div class="nav">
+
 			 <ul>
-				<li><a href="home.php">   <i class="icon-home"></i>Home</a></li>
-				<li><a href="product.php"> 			 <i class="icon-th-list"></i>Product</a></li>
-				<li><a href="aboutus1.php">   <i class="icon-bookmark"></i>About Us</a></li>
+				<li><a href="home.php"><i class="icon-home"></i>Home</a></li>
+				<li><a href="product.php"><i class="icon-th-list"></i>Product</a>
+				<li><a href="aboutus1.php"><i class="icon-bookmark"></i>About Us</a></li>
 				<li><a href="contactus1.php"><i class="icon-inbox"></i>Contact Us</a></li>
 				<li><a href="privacy1.php"><i class="icon-info-sign"></i>Privacy Policy</a></li>
 				<li><a href="faqs1.php"><i class="icon-question-sign"></i>FAQs</a></li>
 			</ul>
-	</div>
-	<br>
-
-	<form action="https://www.sandbox.paypal.com/cgi-bin/webscr"  method="post">
-        <!-- the cmd parameter is set to _xclick for a Buy Now button -->
-<?php
-$cusid=$_POST['cusid'];
-$total=$_POST['total'];
-$time=$_POST['time'];
-$portal=$_POST['portal'];
-$distination=$_POST['distination'];
-$transactioncode=$_POST['transactioncode'];
-
-if($portal=='Pick-Up'){
-$charge=0;
-}
-if($portal=='Delivery'){
-$charge=50;
-}
-if($distination=='City Proper'){
-$charge1=0;
-}
-if($distination=='Outside City'){
-$charge1=50;
-}
-$totalcharge=$charge+$charge1;
-$grandtotal=$totalcharge+$total;
-?>
-
-	<input type="hidden" name="cmd" value="_xclick" />
-        <input type="hidden" name="business" value="mamma__1330248786_biz@yahoo.com" />
-        <input type="hidden" name="item_name" value="<?php echo $cusid; ?>" />
-        <input type="hidden" name="item_number" value="<?php echo $transactioncode; ?>" />
-        <input type="hidden" name="amount" value="<?php echo $grandtotal; ?>" />
-        <input type="hidden" name="no_shipping" value="1" />
-        <input type="hidden" name="no_note" value="1" />
-        <input type="hidden" name="currency_code" value="PHP" />
-        <input type="hidden" name="lc" value="GB" />
-        <input type="hidden" name="bn" value="PP-BuyNowBF" /><br />
-		<div style="margin:0 auto; width:50px;">
-        <input type="image" src="images/button.jpg" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
-        <img alt="fdff" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
 		</div>
-        <!-- Payment confirmed -->
-        <input type="hidden" name="return" value="http://mammamarias.elementfx.com/showconfirm.php" />
-        <!-- Payment cancelled -->
-        <input type="hidden" name="cancel_return" value="http://mammamarias.elementfx.com/cancel.php" />
-        <input type="hidden" name="rm" value="2" />
-        <input type="hidden" name="notify_url" value="http://mammamarias.elementfx.com/ipn.php" />
-        <input type="hidden" name="custom" value="any other custom field you want to pass" />
-    </form>
 
+		<div class="nav1">
+			<ul>
+				<li><a href="product.php">Basketball</a></li>
+				<li>|</li>
+				<li><a href="DreamCatchers1.php" class="active" style="color:#111;">DreamCatchers</a></li>
+				<li>|</li>
+				<li><a href="(DC)KeyChains1.php">(DC)KeyChains</a></li>
+			</ul>
+				<a href="cart.php"><button class="btn btn-inverse" style="right:1%; position:fixed; top:10%;"><i class="icon-shopping-cart icon-white"></i> View Cart</button></a>
+		</div>
+
+	<div id="content">
+		<br />
+		<br />
+		<div id="product">
+
+			<?php
+
+				$query = $conn->query("SELECT *FROM product WHERE category='DreamCatchers' ORDER BY product_id DESC") or die (mysqli_error());
+
+					while($fetch = $query->fetch_array($query))
+						{
+
+						$pid = $fetch['product_id'];
+
+						$query1 = $conn->query("SELECT * FROM stock WHERE product_id = '$pid'") or die (mysql_error());
+						$rows = $query1->fetch_array($query1);
+
+						$qty = $rows['qty'];
+						if($qty <= 5){
+
+						}else{
+							echo "<div class='float'>";
+							echo "<center>";
+							echo "<a href='details.php?id=".$fetch['product_id']."'><img class='img-polaroid' src='photo/".$fetch['product_image']."' height = '300px' width = '300px'></a>";
+							echo "".$fetch['product_name']."";
+							echo "<br />";
+							echo "P ".$fetch['product_price']."";
+							echo "<br />";
+							echo "<h3 class='text-info' style='position:absolute; margin-top:-90px; text-indent:15px;'> Size: ".$fetch['product_size']."</h3>";
+							echo "</center>";
+							echo "</div>";
+						}
+
+						}
+			?>
+		</div>
+
+
+
+
+	</div>
+
+	<br />
 </div>
+	<br />
+	<div id="footer">
+		<div class="foot">
+			<label style="font-size:17px;"> Copyrght &copy; </label>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			</p>
+		</div>
+	</div>
 </body>
 </html>

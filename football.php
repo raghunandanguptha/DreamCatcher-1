@@ -148,7 +148,7 @@
 							echo "<a href='details.php?id=".$fetch['product_id']."'><img class='img-polaroid' src='photo/".$fetch['product_image']."' height = '300px' width = '300px'></a>";
 							echo "".$fetch['product_name']."";
 							echo "<br />";
-							echo "RS ".$fetch['product_price']."";
+							echo "P ".$fetch['product_price']."";
 							echo "<br />";
 							echo "<h3 class='text-info' style='position:absolute; margin-top:-90px; text-indent:15px;'> Size: ".$fetch['product_size']."</h3>";
 							echo "</center>";
@@ -170,9 +170,7 @@
 	<div id="footer">
 		<div class="foot">
 			<label style="font-size:17px;"> Copyrght &copy; </label>
-			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>
-			   <a href="https://raghunandanguptha.github.io/"><li>Website : https://raghunandanguptha.github.io/</li></a>
-			   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
+			<p style="font-size:25px;">Dream Catchers Zone Inc. 2021 Brought To You By - <u>RNG Developers</u>   <a href="https://instagram.com/nandanguptha?r=nametag"><li>Instagram : https://instagram.com/nandanguptha?r=nametag</li></a>
 			</p>
 		</div>
 	</div>

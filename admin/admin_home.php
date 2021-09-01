@@ -44,7 +44,6 @@
 				<li>Welcome:&nbsp;&nbsp;&nbsp;<a><i class="icon-user icon-white"></i><?php echo $fetch['username']; ?></a></li>
 			</ul>
 	</div>
-	<img width="100%" height="50%"  src="../img/d.jpg">
 
 	<br>
 	<div style="position: absolute; top:10.4%" id="leftnav">
