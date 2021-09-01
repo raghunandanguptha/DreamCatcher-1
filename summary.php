@@ -9,7 +9,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 <html>
 <head>
 	<title>Dream Catchers Zone</title>
-	<link rel="icon" href="img/DClogo.jpg" />
+	<link rel="icon" href="img/logo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/bootstrap.js"></script>
@@ -30,8 +30,8 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 <body>
 
 	<div id="header">
-		<img src="img/DClogo.jpg">
-		<label>Dream CatcherZone</label>
+		<img src="img/logo.jpg">
+		<label> Shoe Store</label>
 
 			<?php
 				$id = (int) $_SESSION['id'];
@@ -108,7 +108,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 			</ul>
 	</div>
 
-	<form action="paynow.php" method="post" class="well"  style="background-color:#fff; overflow:hidden;">
+	<form method="post" class="well"  style="background-color:#fff; overflow:hidden;">
 	<table class="table" style="width:50%;">
 	<label style="font-size:25px;">Summary of Order/s</label>
 		<tr>
@@ -147,6 +147,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 	<legend></legend>
 <<<<<<< HEAD
 	<h4>TOTAL: RS <?php echo $amnt; ?></h4>
+<<<<<<< HEAD
 	<br>
 	<input type="submit" value="Pay Now" name="paynw">
 =======
@@ -156,6 +157,9 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 <<<<<<< HEAD
 	
 =======
+=======
+	</form>
+>>>>>>> parent of b0962e0 (befor hosting)
 	<div class='pull-right'>
 <div class="">
     <form action="<?php echo $paypal_url ?>" method="post" >
@@ -187,7 +191,11 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 				<div class="modal-body">
 					<form method="post">
 					<center>
+<<<<<<< HEAD
 						<input type="image" src="images/button.jpg" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
+=======
+						<input type="image"  border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"  />
+>>>>>>> parent of b0962e0 (befor hosting)
 						<br/>
 						<br/>
 						<button class="btn btn-lg" >Cash</button>
@@ -199,7 +207,10 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 			</div>
 		</div>
 
+<<<<<<< HEAD
 >>>>>>> parent of 6ff51eb (saturday12-06-2021)
+=======
+>>>>>>> parent of b0962e0 (befor hosting)
 
 		<br />
 		<br />

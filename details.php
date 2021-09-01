@@ -8,7 +8,7 @@
 <html>
 <head>
 	<title>Dream Catchers Zone</title>
-	<link rel="icon" href="img/DClogo.jpg" />
+	<link rel="icon" href="img/logo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/bootstrap.js"></script>
@@ -28,7 +28,7 @@
 </head>
 <body>
 	<div id="header">
-		<img src="img/DClogo.jpg">
+		<img src="img/logo.jpg">
 		<label>Dream Catchers Zone</label>
 
 			<?php
